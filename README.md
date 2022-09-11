@@ -22,28 +22,26 @@ copys:
 Ubuntu
 ## Installation
 ```
-sudo apt update
-sudo apt upgrade
-sudo apt install git
 git clone https://github.com/ToshikiNakamura0412/my_ubuntu_setup.git
 cd my_ubuntu_setup
-./setup1.sh
+./setup.sh
 sudo reboot
-cd ~/my_ubuntu_setup
-./setup2.sh
-sudo apt update
-sudo apt upgrade
 ```
+Continue with the following settings
 ## Setting
+- Background
 - Mouse & Touchpad
 - Keyboard Shortcuts
 - Region & Language
+- Date & Time
 ## Keyboard
-change keyboard layout from English to Japanese
+Change keyboard layout from English to Japanese
+
+Set the above (especially Language) before setting up the keyboard
 ```
 sudo dpkg-reconfigure keyboard-configuration
 ```
-- Generic 105-key (Intel) PC
+- Generic 105-key PC (intl.)
 - Japanese
 - Japanese
 - The default for the keyboard layout
@@ -52,26 +50,35 @@ sudo dpkg-reconfigure keyboard-configuration
 ```
 sudo vim /usr/share/ibus/component/mozc.xml
 ```
-set `<layout>jp</layout>`
+Set `<layout>jp</layout>`
 ```
 sudo reboot
 ```
 ## Gnome shell extensions
-visit https://extensions.gnome.org and install browser extensions
+Visit https://extensions.gnome.org and install browser extensions
 
-enable the following extensions
+Enable the following extensions
 - User Themes
 - Dash to Panel
 - ArcMenu (by andrew.zaech)
 
-launch Tweaks and set:
+Launch Tweaks and set:
 - Fonts (Monospace Regular 15)
 - Appearance (application, icon and wallpaper)
 
-set Dash-to-Panel and ArcMenu
+Set Dash-to-Panel and ArcMenu
 ## oh-my-zsh
-set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
 ```
 source ~/.zshrc
 ```
-comment out L50 (`command_execution_time`) in `~/.p10k.zsh`
+Comment out L50 (`command_execution_time`) in `~/.p10k.zsh`
+```
+source ~/.zshrc
+```
+## dotfiles
+Visit https://github.com/ToshikiNakamura0412/dotfiles.git and set dotfiles
