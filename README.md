@@ -7,7 +7,7 @@ When executed, it installs:
 - tmux
 - vim
 - neovim
-- zsh
+- zsh (with oh-my-zsh and powerlevel10k theme)
 - prerequisites of Gnome shell extensionos
 - curl
 - Mozc setting
@@ -18,10 +18,8 @@ copys:
 - icons
 - themes
 - wallpaper
-
 ## Environment
-- Ubuntu
-
+Ubuntu
 ## Installation
 ```
 sudo apt update
@@ -31,18 +29,17 @@ git clone https://github.com/ToshikiNakamura0412/my_ubuntu_setup.git
 cd my_ubuntu_setup
 ./setup1.sh
 sudo reboot
+cd ~/my_ubuntu_setup
 ./setup2.sh
 sudo apt update
 sudo apt upgrade
 ```
-
 ## Setting
 - Mouse & Touchpad
 - Keyboard Shortcuts
 - Region & Language
-
 ## Keyboard
-Changed keyboard layout from English to Japanese
+change keyboard layout from English to Japanese
 ```
 sudo dpkg-reconfigure keyboard-configuration
 ```
@@ -55,15 +52,14 @@ sudo dpkg-reconfigure keyboard-configuration
 ```
 sudo vim /usr/share/ibus/component/mozc.xml
 ```
-`<layout>default</layout>` ---> `<layout>default</layout>`
+set `<layout>jp</layout>`
 ```
 sudo reboot
 ```
-
 ## Gnome shell extensions
 visit https://extensions.gnome.org and install browser extensions
 
-enable the following features
+enable the following extensions
 - User Themes
 - Dash to Panel
 - ArcMenu (by andrew.zaech)
@@ -73,10 +69,9 @@ launch Tweaks and set:
 - Appearance (application, icon and wallpaper)
 
 set Dash-to-Panel and ArcMenu
-
-## oh my zsh
+## oh-my-zsh
 set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
 ```
 source ~/.zshrc
 ```
-comment out L50 (`command_execution_time`) in `~/.p10k.zsh
+comment out L50 (`command_execution_time`) in `~/.p10k.zsh`
