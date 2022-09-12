@@ -22,8 +22,8 @@ copys:
 Ubuntu
 ## Installation
 ```
-git clone https://github.com/ToshikiNakamura0412/my_ubuntu_setup.git
-cd my_ubuntu_setup
+git clone --depth=1 https://github.com/ToshikiNakamura0412/my_ubuntu_setup.git ~/
+cd ~/my_ubuntu_setup
 ./setup.sh
 sudo reboot
 ```

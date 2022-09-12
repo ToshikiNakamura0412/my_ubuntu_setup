@@ -1,15 +1,15 @@
-#!/bin/sh
+#!/bin/bash
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 # hide home folder
-echo -n "hiding home folder in desktop ... "
+echo -n "hiding home folder in desktop... "
 gsettings set org.gnome.shell.extensions.desktop-icons show-home false
-echo "Done!"
+echo "Done"
 
 # Xmodmap
-echo -n "copy keymap config ... "
+echo -n "copy keymap config... "
 cat $SCRIPT_DIR/Xmodmap > ~/.Xmodmap
-echo "Done!"
+echo "Done"
 
 # font
 if [ -d ~/.fonts ]; then
@@ -17,7 +17,7 @@ if [ -d ~/.fonts ]; then
 else
     mkdir -p -v ~/.fonts
 fi
-echo "copy fonts ... "
+echo "copy fonts... "
 cp -f -v $SCRIPT_DIR/fonts/* ~/.fonts/
 echo ">>> Done!"
 
@@ -27,9 +27,9 @@ if [ -d ~/.icons ]; then
 else
     mkdir -p -v ~/.icons
 fi
-echo -n "copy icons ... "
+echo -n "copy icons... "
 cp -f -r $SCRIPT_DIR/icons/* ~/.icons/
-echo "Done!"
+echo "Done"
 
 # theme
 if [ -d ~/.themes ]; then
@@ -37,9 +37,9 @@ if [ -d ~/.themes ]; then
 else
     mkdir -p -v ~/.themes
 fi
-echo -n "copy themes ... "
+echo -n "copy themes... "
 cp -f -r $SCRIPT_DIR/themes/* ~/.themes/
-echo "Done!"
+echo "Done"
 
 # wallpaper
 if [ -d ~/Pictures ]; then
@@ -47,36 +47,76 @@ if [ -d ~/Pictures ]; then
 else
     mkdir -p -v ~/Pictures
 fi
-echo "copy wallpaper ... "
+echo "copy wallpaper... "
 cp -f -v $SCRIPT_DIR/wallpaper.png ~/Pictures
 echo ">>> Done!"
 
 # tmux
+echo "========================"
+echo " tmux will be installed"
+echo "========================"
 sudo apt install tmux
 
 # vim
+echo "======================="
+echo " vim will be installed"
+echo "======================="
 sudo apt install vim
 
 # neovim
+echo "=========================="
+echo " neovim will be installed"
+echo "=========================="
 sudo apt install neovim
 
 # gnome-shell
+echo "==============================="
+echo " gnome-shell will be installed"
+echo "==============================="
 sudo apt install chrome-gnome-shell
 
 # gnome-tweaks
+echo "================================"
+echo " gnome-tweaks will be installed"
+echo "================================"
 sudo apt install gnome-tweaks
 
 # mozc utils
+echo "=============================="
+echo " mozc-utils will be installed"
+echo "=============================="
 sudo apt install mozc-utils-gui
 
 # curl
+echo "========================"
+echo " curl will be installed"
+echo "========================"
 sudo apt install curl
 
 # zsh
+echo "======================="
+echo " zsh will be installed"
+echo "======================="
 sudo apt install zsh
+echo "============================="
+echo " The shell is changed to zsh"
+echo "============================="
 chsh -s /bin/zsh
+
+# oh-my-zsh
+echo "============================="
+echo " oh-my-zsh will be installed"
+echo "============================="
+git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+cat $SCRIPT_DIR/zshrc_template > ~/.zshrc
+
+# powerlevel10k
+echo "================================="
+echo " powerlevel10k will be installed"
+echo "================================="
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 
 echo "==="
 echo "you can change your shell to zsh if you reboot"
-echo "run setup2.sh after reboot"
 echo "==="
