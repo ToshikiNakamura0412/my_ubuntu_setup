@@ -75,7 +75,7 @@ Enable the following extensions
 Launch Tweaks and set:
 - Startup Applications (Terminal)
 - Fonts (Monospace Regular 15)
-- Appearance (application, icon and wallpaper)
+- Appearance (application and icon)
 
 Set Dash-to-Panel and ArcMenu
 ## dotfiles
