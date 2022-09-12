@@ -10,7 +10,7 @@ When executed, it installs:
 - zsh (with oh-my-zsh and powerlevel10k theme)
 - prerequisites of Gnome shell extensionos
 - curl
-- Mozc setting
+- mozc utils
 
 copys:
 
@@ -18,6 +18,11 @@ copys:
 - icons
 - themes
 - wallpaper
+
+hides:
+
+- home folder in desktop
+
 ## Environment
 Ubuntu
 ## Installation
@@ -28,16 +33,8 @@ cd ~/my_ubuntu_setup
 sudo reboot
 ```
 Continue with the following settings
-## oh-my-zsh
-```
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
-```
-source ~/.zshrc
-```
-Comment out L50 (`command_execution_time`) in `~/.p10k.zsh`
+## oh-my-zsh (powerlevel10k theme)
+Comment out L50 (`command_execution_time`) in `~/.p10k.zsh` after set theme
 ```
 source ~/.zshrc
 ```
@@ -68,7 +65,7 @@ Set `<layout>jp</layout>`
 sudo reboot
 ```
 ## Gnome shell extensions
-Visit https://extensions.gnome.org and install browser extensions
+Visit https://extensions.gnome.org and install Firefox extensions
 
 Enable the following extensions
 - User Themes
@@ -76,6 +73,7 @@ Enable the following extensions
 - ArcMenu (by andrew.zaech)
 
 Launch Tweaks and set:
+- Startup Applications (Terminal)
 - Fonts (Monospace Regular 15)
 - Appearance (application, icon and wallpaper)
 
