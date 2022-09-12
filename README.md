@@ -22,12 +22,25 @@ copys:
 Ubuntu
 ## Installation
 ```
-git clone --depth=1 https://github.com/ToshikiNakamura0412/my_ubuntu_setup.git ~/
+git clone --depth=1 https://github.com/ToshikiNakamura0412/my_ubuntu_setup.git ~/my_ubuntu_setup
 cd ~/my_ubuntu_setup
 ./setup.sh
 sudo reboot
 ```
 Continue with the following settings
+## oh-my-zsh
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
+```
+source ~/.zshrc
+```
+Comment out L50 (`command_execution_time`) in `~/.p10k.zsh`
+```
+source ~/.zshrc
+```
 ## Setting
 - Background
 - Mouse & Touchpad
@@ -67,18 +80,5 @@ Launch Tweaks and set:
 - Appearance (application, icon and wallpaper)
 
 Set Dash-to-Panel and ArcMenu
-## oh-my-zsh
-```
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-Set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
-```
-source ~/.zshrc
-```
-Comment out L50 (`command_execution_time`) in `~/.p10k.zsh`
-```
-source ~/.zshrc
-```
 ## dotfiles
 Visit https://github.com/ToshikiNakamura0412/dotfiles.git and set dotfiles
