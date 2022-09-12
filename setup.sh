@@ -51,53 +51,60 @@ echo "copy wallpaper... "
 cp -f -v $SCRIPT_DIR/wallpaper.png ~/Pictures
 echo ">>> Done!"
 
+# package update & upgrade
+echo "=========================="
+echo " Packages will be updated"
+echo "=========================="
+sudo apt update
+sudo apt upgrade -y
+
 # tmux
 echo "========================"
 echo " tmux will be installed"
 echo "========================"
-sudo apt install tmux
+sudo apt install tmux -y
 
 # vim
 echo "======================="
 echo " vim will be installed"
 echo "======================="
-sudo apt install vim
+sudo apt install vim -y
 
 # neovim
 echo "=========================="
 echo " neovim will be installed"
 echo "=========================="
-sudo apt install neovim
+sudo apt install neovim -y
 
 # gnome-shell
 echo "==============================="
 echo " gnome-shell will be installed"
 echo "==============================="
-sudo apt install chrome-gnome-shell
+sudo apt install chrome-gnome-shell -y
 
 # gnome-tweaks
 echo "================================"
 echo " gnome-tweaks will be installed"
 echo "================================"
-sudo apt install gnome-tweaks
+sudo apt install gnome-tweaks -y
 
 # mozc utils
 echo "=============================="
 echo " mozc-utils will be installed"
 echo "=============================="
-sudo apt install mozc-utils-gui
+sudo apt install mozc-utils-gui -y
 
 # curl
 echo "========================"
 echo " curl will be installed"
 echo "========================"
-sudo apt install curl
+sudo apt install curl -y
 
 # zsh
 echo "======================="
 echo " zsh will be installed"
 echo "======================="
-sudo apt install zsh
+sudo apt install zsh -y
 echo "============================="
 echo " The shell is changed to zsh"
 echo "============================="
