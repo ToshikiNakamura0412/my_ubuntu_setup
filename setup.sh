@@ -123,6 +123,25 @@ echo " powerlevel10k will be installed"
 echo "================================="
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+# fzf
+echo "======================="
+echo " fzf will be installed"
+echo "======================="
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+# zsh-syntax-highlighting
+echo "==========================================="
+echo " zsh-syntax-highlighting will be installed"
+echo "==========================================="
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# zsh-autosuggestions
+echo "======================================="
+echo " zsh-autosuggestions will be installed"
+echo "======================================="
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 
 echo "==="
 echo "you can change your shell to zsh if you reboot"
