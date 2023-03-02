@@ -7,9 +7,9 @@ gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 echo "Done"
 
 # Xmodmap
-echo -n "copy keymap config... "
-cat $SCRIPT_DIR/Xmodmap > ~/.Xmodmap
-echo "Done"
+# echo -n "copy keymap config... "
+# cat $SCRIPT_DIR/Xmodmap > ~/.Xmodmap
+# echo "Done"
 
 # font
 if [ -d ~/.fonts ]; then
