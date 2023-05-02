@@ -65,12 +65,13 @@ Set `<layout>jp</layout>`
 sudo reboot
 ```
 ## Gnome shell extensions
-Visit https://extensions.gnome.org and install Firefox extensions
+Visit https://extensions.gnome.org and install Gnome extensions
 
 Enable the following extensions
 - User Themes
 - Dash to Panel
 - ArcMenu (by andrew.zaech)
+- WinTile: Windows 10 window tiling for GNOME
 
 Launch Tweaks and set:
 - Startup Applications (Terminal)
