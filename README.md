@@ -68,6 +68,7 @@ sudo reboot
 Visit https://extensions.gnome.org and install Gnome extensions
 
 Enable the following extensions
+- Extensions
 - User Themes
 - Dash to Panel
 - ArcMenu (by andrew.zaech)
@@ -75,7 +76,7 @@ Enable the following extensions
 
 Launch Tweaks and set:
 - Startup Applications (Terminal)
-- Fonts (MesloLGS NF Regular 13)
+- Fonts (MesloLGS NF Regular 12)
 - Appearance (application and icon)
 
 Set Dash-to-Panel and ArcMenu
