@@ -75,6 +75,8 @@ sudo apt upgrade -y
 echo "=========================="
 echo " neovim will be installed"
 echo "=========================="
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt update
 sudo apt install neovim -y
 
 # gnome-shell
