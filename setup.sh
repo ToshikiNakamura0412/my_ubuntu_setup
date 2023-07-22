@@ -1,25 +1,21 @@
-#!/bin/bash
+#!/bin/sh
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 # hide home folder
 echo -n "hiding home folder in desktop... "
 gsettings set org.gnome.shell.extensions.desktop-icons show-home false
-echo "Done"
+echo ">>> Done"
 
 # font
-if [ -d ~/.fonts ]; then
-    echo "~/.fonts exists"
-else
+if [ ! -d ~/.fonts ]; then
     mkdir -p -v ~/.fonts
 fi
 echo "copy fonts... "
 cp -f -v $SCRIPT_DIR/fonts/* ~/.fonts/
-echo ">>> Done!"
+echo ">>> Done"
 
 # icon
-if [ -d ~/.icons ]; then
-    echo "~/.icons exists"
-else
+if [ ! -d ~/.icons ]; then
     mkdir -p -v ~/.icons
 fi
 echo -n "copy icons... "
@@ -27,7 +23,7 @@ cp -f -r $SCRIPT_DIR/icons/* ~/.icons/
 echo "Done"
 
 # theme
-if [ -d ~/.themes ]; then
+if [ ! -d ~/.themes ]; then
     echo "~/.themes exists"
 else
     mkdir -p -v ~/.themes
@@ -35,20 +31,6 @@ fi
 echo -n "copy themes... "
 cp -f -r $SCRIPT_DIR/themes/* ~/.themes/
 echo "Done"
-
-# wallpaper
-if [ -d ~/Pictures ]; then
-    echo "~/Pictures exists"
-else
-    mkdir -p -v ~/Pictures
-fi
-if [ -f ~/Pictures/wallpaper.png ]; then
-    echo "wallpaper exists"
-else
-    echo "copy wallpaper... "
-    cp -f -v $SCRIPT_DIR/wallpaper.png ~/Pictures
-    echo ">>> Done!"
-fi
 
 # package update & upgrade
 echo "=========================="
@@ -64,27 +46,10 @@ echo "========================"
 sudo apt install tmux -y
 
 # vim
-echo "======================="
-echo " vim will be installed"
-echo "======================="
-sudo apt install vim -y
-echo "======================="
-echo " vim will be updated"
-echo "======================="
-sudo add-apt-repository ppa:jonathonf/vim
-sudo apt update
-sudo apt upgrade -y
+cd $SCRIPT_DIR && ./upgrade_vim.sh
 
 # neovim
-echo "=========================="
-echo " neovim will be installed"
-echo "=========================="
-cd ~/
-wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz
-rm ~/nvim-linux64.tar.gz
-sudo mv nvim-linux64 /
-sudo ln -sf /nvim-linux64/bin/nvim  /usr/bin/nvim
+cd $SCRIPT_DIR && ./upgrade_nvim.sh
 
 # gnome-shell
 echo "==============================="

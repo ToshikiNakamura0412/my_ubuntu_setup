@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
-echo "=========================="
-echo " neovim will be upgraded"
-echo "=========================="
+echo "========================================"
+echo " neovim will be installed and upgraded"
+echo "========================================"
 sudo apt purge neovim
 if [ -d /nvim-linux64 ]; then
     echo "/nvim-linux64 exists"
@@ -21,4 +21,4 @@ tar xzvf nvim-linux64.tar.gz
 rm ~/nvim-linux64.tar.gz
 sudo mv nvim-linux64 /
 sudo ln -sf /nvim-linux64/bin/nvim  /usr/bin/nvim
-echo ">>> Done!"
+echo ">>> Done"
