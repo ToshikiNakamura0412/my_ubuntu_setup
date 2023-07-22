@@ -42,9 +42,13 @@ if [ -d ~/Pictures ]; then
 else
     mkdir -p -v ~/Pictures
 fi
-echo "copy wallpaper... "
-cp -f -v $SCRIPT_DIR/wallpaper.png ~/Pictures
-echo ">>> Done!"
+if [ -f ~/Pictures/wallpaper.png ]; then
+    echo "wallpaper exists"
+else
+    echo "copy wallpaper... "
+    cp -f -v $SCRIPT_DIR/wallpaper.png ~/Pictures
+    echo ">>> Done!"
+fi
 
 # package update & upgrade
 echo "=========================="
@@ -75,9 +79,12 @@ sudo apt upgrade -y
 echo "=========================="
 echo " neovim will be installed"
 echo "=========================="
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt update
-sudo apt install neovim -y
+cd ~/
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+tar xzvf nvim-linux64.tar.gz
+rm ~/nvim-linux64.tar.gz
+sudo mv nvim-linux64 /
+sudo ln -sf /nvim-linux64/bin/nvim  /usr/bin/nvim
 
 # gnome-shell
 echo "==============================="
