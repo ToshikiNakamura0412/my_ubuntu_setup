@@ -46,10 +46,10 @@ echo "========================"
 sudo apt install tmux -y
 
 # vim
-cd $SCRIPT_DIR && ./upgrade_vim.sh
+cd $SCRIPT_DIR/scripts && ./upgrade_vim.sh
 
 # neovim
-cd $SCRIPT_DIR && ./upgrade_nvim.sh
+cd $SCRIPT_DIR/scripts && ./upgrade_nvim.sh
 
 # gnome-shell
 echo "==============================="

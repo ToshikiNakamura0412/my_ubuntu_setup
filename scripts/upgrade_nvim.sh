@@ -1,6 +1,7 @@
 #!/bin/sh
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
+# neovim
 echo "========================================"
 echo " neovim will be installed and upgraded"
 echo "========================================"
