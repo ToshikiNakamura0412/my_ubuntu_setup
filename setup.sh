@@ -4,7 +4,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 # hide home folder
 echo -n "hiding home folder in desktop... "
 gsettings set org.gnome.shell.extensions.desktop-icons show-home false
-echo ">>> Done"
+echo "Done"
 
 # font
 if [ ! -d ~/.fonts ]; then
@@ -20,7 +20,7 @@ if [ ! -d ~/.icons ]; then
 fi
 echo -n "copy icons... "
 cp -f -r $SCRIPT_DIR/icons/* ~/.icons/
-echo "Done"
+echo ">>> Done"
 
 # theme
 if [ ! -d ~/.themes ]; then
@@ -28,7 +28,7 @@ if [ ! -d ~/.themes ]; then
 fi
 echo -n "copy themes... "
 cp -f -r $SCRIPT_DIR/themes/* ~/.themes/
-echo "Done"
+echo ">> Done"
 
 # package update & upgrade
 echo "=========================="
