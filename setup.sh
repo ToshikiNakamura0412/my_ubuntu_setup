@@ -28,7 +28,7 @@ if [ ! -d ~/.themes ]; then
 fi
 echo -n "copy themes... "
 cp -f -r $SCRIPT_DIR/themes/* ~/.themes/
-echo ">> Done"
+echo ">>> Done"
 
 # package update & upgrade
 echo "=========================="
