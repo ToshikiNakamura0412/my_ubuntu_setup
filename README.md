@@ -44,6 +44,12 @@ source ~/.zshrc
 - Keyboard Shortcuts
 - Region & Language
 - Date & Time
+- Folder name
+    - Change folder name from Japanese to English
+        ```
+        cd ~/my_ubuntu_setup/scripts
+        ./change_folder_name_to_en.sh
+        ```
 ## Keyboard
 Change keyboard layout from English to Japanese
 
