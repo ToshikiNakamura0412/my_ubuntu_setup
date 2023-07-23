@@ -24,8 +24,6 @@ echo "Done"
 
 # theme
 if [ ! -d ~/.themes ]; then
-    echo "~/.themes exists"
-else
     mkdir -v ~/.themes
 fi
 echo -n "copy themes... "
