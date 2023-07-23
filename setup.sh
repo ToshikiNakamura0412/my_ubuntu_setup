@@ -8,7 +8,7 @@ echo ">>> Done"
 
 # font
 if [ ! -d ~/.fonts ]; then
-    mkdir -p -v ~/.fonts
+    mkdir -v ~/.fonts
 fi
 echo "copy fonts... "
 cp -f -v $SCRIPT_DIR/fonts/* ~/.fonts/
@@ -16,7 +16,7 @@ echo ">>> Done"
 
 # icon
 if [ ! -d ~/.icons ]; then
-    mkdir -p -v ~/.icons
+    mkdir -v ~/.icons
 fi
 echo -n "copy icons... "
 cp -f -r $SCRIPT_DIR/icons/* ~/.icons/
@@ -26,7 +26,7 @@ echo "Done"
 if [ ! -d ~/.themes ]; then
     echo "~/.themes exists"
 else
-    mkdir -p -v ~/.themes
+    mkdir -v ~/.themes
 fi
 echo -n "copy themes... "
 cp -f -r $SCRIPT_DIR/themes/* ~/.themes/
@@ -90,6 +90,10 @@ echo "============================="
 echo " oh-my-zsh will be installed"
 echo "============================="
 git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+if [ ! -d ~/backup ]; then
+    mkdir -v ~/backup
+fi
+cp ~/.zshrc ~/backup/zshrc_default
 cat $SCRIPT_DIR/zshrc_template > ~/.zshrc
 
 # powerlevel10k
