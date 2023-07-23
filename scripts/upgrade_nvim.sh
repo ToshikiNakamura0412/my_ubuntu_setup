@@ -11,7 +11,7 @@ if [ -d /nvim-linux64 ]; then
     rm -rf /nvim-linux64
     echo "remove /nvim-linux64"
 fi
-if [ -f ~/nvim-linux64.tar.gz ]; then
+if [ -e ~/nvim-linux64.tar.gz ]; then
     echo "~/nvim-linux64.tar.gz exists"
     rm ~/nvim-linux64.tar.gz
     echo "remove ~/nvim-linux64.tar.gz"
