@@ -8,5 +8,6 @@ fi
 if [ ! -e ~/Pictures/wallpaper.png ]; then
     echo "copy wallpaper... "
     cp -f -v $SCRIPT_DIR/wallpaper.png ~/Pictures
-    echo ">>> Done!"
+    echo ">>> Done"
+    echo ""
 fi

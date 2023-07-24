@@ -23,3 +23,5 @@ rm ~/nvim-linux64.tar.gz
 sudo mv nvim-linux64 /
 sudo ln -sf /nvim-linux64/bin/nvim  /usr/bin/nvim
 echo ">>> Done"
+echo ""
+
