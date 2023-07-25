@@ -33,6 +33,11 @@ cd ~/my_ubuntu_setup
 sudo reboot
 ```
 Continue with the following settings
+### [Option] Install ROS Noetic
+```
+cd ~/my_ubuntu_setup
+./install_ros_noetic_desktop_full.sh
+```
 ## oh-my-zsh (powerlevel10k theme)
 Comment out L50 (`command_execution_time`) in `~/.p10k.zsh` after set theme
 ```
@@ -47,8 +52,7 @@ source ~/.zshrc
 - Folder name
     - Change folder name from Japanese to English
         ```
-        cd ~/my_ubuntu_setup/scripts
-        ./change_folder_name_to_en.sh
+        LANG=C xdg-user-dirs-gtk-update
         ```
 ## Keyboard
 Change keyboard layout from English to Japanese
