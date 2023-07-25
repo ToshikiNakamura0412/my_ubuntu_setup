@@ -7,7 +7,8 @@ if [ ! -d ~/Pictures ]; then
 fi
 if [ ! -e ~/Pictures/wallpaper.png ]; then
     echo "copy wallpaper... "
-    cp -f -v $SCRIPT_DIR/wallpaper.png ~/Pictures
+    cp -f -v $SCRIPT_DIR/wallpaper.png $HOME/Pictures
+    gsettings set org.gnome.desktop.background picture-uri "file:$HOME/Pictures/wallpaper.png"
     echo ">>> Done"
     echo ""
 fi
