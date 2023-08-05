@@ -22,7 +22,7 @@ tar xzvf nvim-linux64.tar.gz
 rm ~/nvim-linux64.tar.gz
 sudo mv nvim-linux64 /
 sudo ln -sf /nvim-linux64/bin/nvim  /usr/bin/nvim
-sudo apt install xsel
+sudo apt install xsel -y
 echo ">>> Done"
 echo ""
 
