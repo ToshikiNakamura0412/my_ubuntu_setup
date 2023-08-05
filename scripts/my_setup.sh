@@ -8,7 +8,7 @@ LANG=C xdg-user-dirs-gtk-update
 if [ ! -d ~/Pictures ]; then
     mkdir -p -v ~/Pictures
 fi
-echo "copy wallpaper... "
+echo "setting wallpaper... "
 cp -f -v $SCRIPT_DIR/../wallpaper.png ~/Pictures
 gsettings set org.gnome.desktop.background picture-uri "file:$HOME/Pictures/wallpaper.png"
 echo ">>> Done"

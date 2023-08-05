@@ -1,10 +1,14 @@
 #!/bin/sh
 
 # vim
-echo "======================="
-echo " vim will be installed"
-echo "======================="
-sudo apt install vim -y
+echo "=============================="
+echo " vim-tiny will be uninstalled"
+echo "=============================="
+sudo apt purge vim-tiny -y
+echo "============================="
+echo " vim-gnome will be installed"
+echo "============================="
+sudo apt install vim-gnome -y
 echo "======================="
 echo " vim will be updated"
 echo "======================="
