@@ -1,6 +1,5 @@
 #!/bin/sh
 
-# neovim
 echo "======================="
 echo " act will be installed"
 echo "======================="
