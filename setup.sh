@@ -47,7 +47,7 @@ echo ""
 echo "========================"
 echo " tmux will be installed"
 echo "========================"
-sudo apt install tmux -y
+sudo apt install tmux -y --no-install-recommends
 echo ">>> Done"
 echo ""
 
@@ -61,7 +61,7 @@ cd $SCRIPT_DIR/scripts && ./upgrade_nvim.sh
 echo "==============================="
 echo " gnome-shell will be installed"
 echo "==============================="
-sudo apt install chrome-gnome-shell -y
+sudo apt install chrome-gnome-shell -y --no-install-recommends
 echo ">>> Done"
 echo ""
 
@@ -69,7 +69,7 @@ echo ""
 echo "================================"
 echo " gnome-tweaks will be installed"
 echo "================================"
-sudo apt install gnome-tweaks -y
+sudo apt install gnome-tweaks -y --no-install-recommends
 echo ">>> Done"
 echo ""
 
@@ -77,7 +77,7 @@ echo ""
 echo "=============================="
 echo " mozc-utils will be installed"
 echo "=============================="
-sudo apt install mozc-utils-gui -y
+sudo apt install mozc-utils-gui -y --no-install-recommends
 echo ">>> Done"
 echo ""
 
@@ -85,7 +85,7 @@ echo ""
 echo "========================"
 echo " curl will be installed"
 echo "========================"
-sudo apt install curl -y
+sudo apt install curl -y --no-install-recommends
 echo ">>> Done"
 echo ""
 
@@ -93,7 +93,7 @@ echo ""
 echo "======================="
 echo " zsh will be installed"
 echo "======================="
-sudo apt install zsh -y
+sudo apt install zsh -y --no-install-recommends
 echo "============================="
 echo " The shell is changed to zsh"
 echo "============================="
