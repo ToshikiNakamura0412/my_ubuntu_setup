@@ -8,7 +8,7 @@ sudo apt purge vim-tiny -y
 echo "============================="
 echo " vim-gnome will be installed"
 echo "============================="
-sudo apt install vim-gnome -y
+sudo apt install vim-gnome -y --no-install-recommends
 echo "======================="
 echo " vim will be updated"
 echo "======================="
