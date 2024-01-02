@@ -8,29 +8,13 @@ echo "Done"
 echo ""
 
 # font
-if [ ! -d ~/.fonts ]; then
-    mkdir -v ~/.fonts
+echo "=============================="
+echo " nerd-fonts will be installed"
+echo "=============================="
+if [ ! -d ~/.local/share/fonts ]; then
+    mkdir -p -v ~/.local/share/fonts
 fi
-echo "copy fonts... "
-cp -f -v $SCRIPT_DIR/fonts/* ~/.fonts/
-echo ">>> Done"
-echo ""
-
-# icon
-if [ ! -d ~/.icons ]; then
-    mkdir -v ~/.icons
-fi
-echo -n "copy icons... "
-cp -f -r $SCRIPT_DIR/icons/* ~/.icons/
-echo ">>> Done"
-echo ""
-
-# theme
-if [ ! -d ~/.themes ]; then
-    mkdir -v ~/.themes
-fi
-echo -n "copy themes... "
-cp -f -r $SCRIPT_DIR/themes/* ~/.themes/
+cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/DroidSansMono/DroidSansMNerdFont-Regular.otf
 echo ">>> Done"
 echo ""
 
@@ -51,11 +35,8 @@ sudo apt install tmux -y --no-install-recommends
 echo ">>> Done"
 echo ""
 
-# vim
-cd $SCRIPT_DIR/scripts && ./upgrade_vim.sh
-
 # neovim
-cd $SCRIPT_DIR/scripts && ./upgrade_nvim.sh
+$SCRIPT_DIR/scripts/upgrade_nvim.sh
 
 # gnome-shell
 echo "==============================="
@@ -110,7 +91,7 @@ if [ ! -d ~/backup ]; then
     mkdir -v ~/backup
 fi
 cp ~/.zshrc ~/backup/zshrc_default
-cat $SCRIPT_DIR/zshrc_template > ~/.zshrc
+cp -f -v $SCRIPT_DIR/scripts/zshrc_template ~/.zshrc
 echo ">>> Done"
 echo ""
 
