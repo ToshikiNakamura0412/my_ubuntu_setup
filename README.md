@@ -5,18 +5,16 @@ I run this script on a fresh install of Ubuntu, so that it sets everything up fo
 When executed, it installs:
 
 - tmux
-- vim
 - neovim
 - zsh (with oh-my-zsh and powerlevel10k theme)
 - prerequisites of Gnome shell extensionos
 - curl
+- xsel
 - mozc utils
+- nerd-fonts
 
 copys:
 
-- fonts
-- icons
-- themes
 - wallpaper
 
 hides:
@@ -28,15 +26,13 @@ Ubuntu
 ## Installation
 ```
 git clone --depth=1 https://github.com/ToshikiNakamura0412/my_ubuntu_setup.git ~/my_ubuntu_setup
-cd ~/my_ubuntu_setup
-./setup.sh
+~/my_ubuntu_setup/setup.sh
 sudo reboot
 ```
 Continue with the following settings
 ### [Option] Install ROS Noetic
 ```
-cd ~/my_ubuntu_setup
-./install_ros_noetic_desktop_full.sh
+~/my_ubuntu_setup/scripts/install_ros_noetic_desktop_full.sh
 ```
 ## oh-my-zsh (powerlevel10k theme)
 Comment out L50 (`command_execution_time`) in `~/.p10k.zsh` after set theme
@@ -85,9 +81,8 @@ Enable the following extensions
 - WinTile: Windows 10 window tiling for GNOME
 
 Launch Tweaks and set:
-- Startup Applications (Terminal)
-- Fonts (MesloLGS NF Regular 12)
-- Appearance (application and icon)
+- Fonts (Hack Regular 13)
+- Appearance (Cursor)
 
 Set Dash-to-Panel and ArcMenu
 ## dotfiles
