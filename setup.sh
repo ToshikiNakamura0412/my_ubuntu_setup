@@ -22,6 +22,7 @@ echo ""
 echo "=========================="
 echo " Packages will be updated"
 echo "=========================="
+sudo add-apt-repository ppa:git-core/ppa
 sudo apt update
 sudo apt upgrade -y
 echo ">>> Done"
