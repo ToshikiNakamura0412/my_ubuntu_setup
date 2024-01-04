@@ -81,7 +81,7 @@ Enable the following extensions
 - WinTile: Windows 10 window tiling for GNOME
 
 Launch Tweaks and set:
-- Fonts (Hack Regular 13)
+- Fonts (Hack Nerd Font Regular 13)
 - Appearance (Cursor)
 
 Set Dash-to-Panel and ArcMenu
