@@ -17,7 +17,6 @@ echo ""
 # git user config
 echo -n "setting user config for git... "
 git config --global user.name "Toshiki Nakamura"
-git config --global user.email "tnakamura.amsl@gmail.com
-"
+git config --global user.email "tnakamura.amsl@gmail.com"
 echo ">>> Done"
 echo ""
