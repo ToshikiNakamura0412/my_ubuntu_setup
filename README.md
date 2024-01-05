@@ -4,13 +4,10 @@ I run this script on a fresh install of Ubuntu, so that it sets everything up fo
 
 When executed, it installs:
 
-- git (stable release)
 - tmux
-- neovim
 - zsh (with oh-my-zsh and powerlevel10k theme)
 - prerequisites of Gnome shell extensionos
 - curl
-- xsel
 - mozc utils
 - nerd-fonts
 
