@@ -7,6 +7,17 @@ gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 echo "Done"
 echo ""
 
+# font
+echo "=============================="
+echo " nerd-fonts will be installed"
+echo "=============================="
+if [ ! -d ~/.local/share/fonts ]; then
+    mkdir -p -v ~/.local/share/fonts
+fi
+cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Hack/Regular/HackNerdFont-Regular.ttf
+echo ">>> Done"
+echo ""
+
 # package update & upgrade
 echo "=========================="
 echo " Packages will be updated"
