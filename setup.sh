@@ -127,5 +127,6 @@ echo ""
 
 
 echo "==="
+echo "please set your terminal font as 'Hack Nerd Font Regular'"
 echo "you can change your shell to zsh if you reboot"
 echo "==="
