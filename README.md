@@ -14,10 +14,11 @@ When executed, it installs:
 copys:
 
 - wallpaper
+- theme (Cursor)
 
 hides:
 
-- home folder in desktop
+- home folder in desktop (Ubuntu-20.04)
 
 ## Environment
 Ubuntu
@@ -72,8 +73,6 @@ sudo reboot
 Visit https://extensions.gnome.org and install Gnome extensions
 
 Enable the following extensions
-- Extensions
-- User Themes
 - Dash to Panel
 - ArcMenu (by andrew.zaech)
 - WinTile: Windows 10 window tiling for GNOME
