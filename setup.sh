@@ -2,10 +2,14 @@
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 # hide home folder
-echo -n "hiding home folder in desktop... "
-gsettings set org.gnome.shell.extensions.desktop-icons show-home false
-echo "Done"
-echo ""
+source /etc/os-release
+OS_NAME=$(echo $ID$VERSION_ID | cut -d '.' -f 1)
+if [ $OS_NAME = "ubuntu20" ]; then
+    echo -n "hiding home folder in desktop... "
+    gsettings set org.gnome.shell.extensions.desktop-icons show-home false
+    echo "Done"
+    echo ""
+fi
 
 # copy icons
 echo "copy icons... "
