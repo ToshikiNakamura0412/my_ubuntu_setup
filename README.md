@@ -1,5 +1,7 @@
 # Automatic setup script for Ubuntu
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 I run this script on a fresh install of Ubuntu, so that it sets everything up for me and I am ready to work..
 
 When executed, it installs:
