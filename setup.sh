@@ -46,6 +46,20 @@ function install_pkgs() {
     echo ""
 }
 
+function clone_reposiotries() {
+    echo "===================="
+    echo " Clone repositories"
+    echo "===================="
+    if [[ ! -d ~/dotfiles ]]; then
+        git clone --recursive https://github.com/ToshikiNakamura0412/dotfiles.git ~/dotfiles
+    fi
+    if [[ ! -d ~/dockerfiles ]]; then
+        git clone https://github.com/ToshikiNakamura0412/dockerfiles.git ~/dockerfiles
+    fi
+    echo ">>> Done"
+    echo ""
+}
+
 function change_shell_to_zsh() {
     echo "====================="
     echo " Change shell to zsh"
@@ -69,6 +83,7 @@ function main() {
     copy_icons
     copy_wallpaper
     install_pkgs
+    clone_reposiotries
     change_shell_to_zsh
 
     echo ""
