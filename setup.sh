@@ -1,151 +1,78 @@
-#!/bin/sh
+#!/bin/bash
+
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
-# hide home folder
-source /etc/os-release
-OS_NAME=$(echo $ID$VERSION_ID | cut -d '.' -f 1)
-if [ $OS_NAME = "ubuntu20" ]; then
+function hide_home_folder() {
     echo -n "hiding home folder in desktop... "
     gsettings set org.gnome.shell.extensions.desktop-icons show-home false
     echo "Done"
     echo ""
-fi
+}
 
-# copy icons
-echo "copy icons... "
-if [ ! -d ~/.icons ]; then
-    mkdir -pv ~/.icons
-fi
-cp -r ./icons/* ~/.icons/
-echo ">>> Done"
-echo ""
+function copy_icons() {
+    echo "copy icons... "
+    if [[ ! -d ~/.icons ]]; then
+        mkdir -pv ~/.icons
+    fi
+    cp -r ${SCRIPT_DIR}/icons/* ~/.icons/
+    echo ">>> Done"
+    echo ""
+}
 
-# copy wallpaper
-echo "copy wallpaper... "
-cp -v ./images/wallpaper.png ~/Pictures/
-echo ">>> Done"
-echo ""
+function copy_wallpaper() {
+    if [[ ! -d ~/Pictures ]]; then
+        mkdir -pv ~/Pictures
+    fi
+    if [[ ! -e ~/Pictures/wallpaper.png ]]; then
+        echo "copy wallpaper... "
+        cp -v ${SCRIPT_DIR}/images/wallpaper.png ~/Pictures/
+        echo ">>> Done"
+        echo ""
+    fi
+}
 
-# font
-echo "=============================="
-echo " nerd-fonts will be installed"
-echo "=============================="
-if [ ! -d ~/.local/share/fonts ]; then
-    mkdir -pv ~/.local/share/fonts
-fi
-cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Hack/Regular/HackNerdFont-Regular.ttf
-echo ">>> Done"
-echo ""
+function install_pkgs() {
+    echo "========="
+    echo " Install"
+    echo "========="
+    sudo apt update && sudo apt upgrade -y
+    sudo apt install -y --no-install-recommends \
+        chrome-gnome-shell \
+        gnome-tweaks \
+        mozc-utils-gui \
+        curl \
+        zsh
+    echo ">>> Done"
+    echo ""
+}
 
-# package update & upgrade
-echo "=========================="
-echo " Packages will be updated"
-echo "=========================="
-sudo apt update
-sudo apt upgrade -y
-echo ">>> Done"
-echo ""
+function change_shell_to_zsh() {
+    echo "====================="
+    echo " Change shell to zsh"
+    echo "====================="
+    chsh -s /bin/zsh
+    echo ">>> Done"
+    echo ""
+}
 
-# tmux
-echo "========================"
-echo " tmux will be installed"
-echo "========================"
-sudo apt install tmux -y --no-install-recommends
-echo ">>> Done"
-echo ""
+function main() {
+    if [[ -e /etc/os-release ]]; then
+        source /etc/os-release
+    else
+        echo "This OS is not supported."
+        exit 1
+    fi
 
-# gnome-shell
-echo "==============================="
-echo " gnome-shell will be installed"
-echo "==============================="
-sudo apt install chrome-gnome-shell -y --no-install-recommends
-echo ">>> Done"
-echo ""
+    if [[ $VERSION_ID == "20.04" ]]; then
+        hide_home_folder
+    fi
+    copy_icons
+    copy_wallpaper
+    install_pkgs
+    change_shell_to_zsh
 
-# gnome-tweaks
-echo "================================"
-echo " gnome-tweaks will be installed"
-echo "================================"
-sudo apt install gnome-tweaks -y --no-install-recommends
-echo ">>> Done"
-echo ""
+    echo ""
+    echo -e "Please \e[33mreboot\e[0m your system to apply the changes"
+}
 
-# mozc utils
-echo "=============================="
-echo " mozc-utils will be installed"
-echo "=============================="
-sudo apt install mozc-utils-gui -y --no-install-recommends
-echo ">>> Done"
-echo ""
-
-# curl
-echo "========================"
-echo " curl will be installed"
-echo "========================"
-sudo apt install curl -y --no-install-recommends
-echo ">>> Done"
-echo ""
-
-# zsh
-echo "======================="
-echo " zsh will be installed"
-echo "======================="
-sudo apt install zsh -y --no-install-recommends
-echo "============================="
-echo " The shell is changed to zsh"
-echo "============================="
-chsh -s /bin/zsh
-echo ">>> Done"
-echo ""
-
-# oh-my-zsh
-echo "============================="
-echo " oh-my-zsh will be installed"
-echo "============================="
-git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-if [ ! -d ~/backup ]; then
-    mkdir -v ~/backup
-fi
-cp ~/.zshrc ~/backup/zshrc_default
-cp -f -v $SCRIPT_DIR/scripts/zshrc_template ~/.zshrc
-echo ">>> Done"
-echo ""
-
-# powerlevel10k
-echo "================================="
-echo " powerlevel10k will be installed"
-echo "================================="
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-echo ">>> Done"
-echo ""
-
-# fzf
-echo "======================="
-echo " fzf will be installed"
-echo "======================="
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-echo ">>> Done"
-echo ""
-
-# zsh-syntax-highlighting
-echo "==========================================="
-echo " zsh-syntax-highlighting will be installed"
-echo "==========================================="
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-echo ">>> Done"
-echo ""
-
-# zsh-autosuggestions
-echo "======================================="
-echo " zsh-autosuggestions will be installed"
-echo "======================================="
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-echo ">>> Done"
-echo ""
-
-
-echo "==="
-echo "please set your terminal font as 'Hack Nerd Font Regular'"
-echo "you can change your shell to zsh if you reboot"
-echo "==="
+main
