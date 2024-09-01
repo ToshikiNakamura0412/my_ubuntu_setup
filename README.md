@@ -24,15 +24,7 @@ sudo reboot
 ```
 
 #### Install
-- mozc-utils-gui
-- curl
-- zsh
-- htop
-- simplescreenrecorder
-- docker
-- openssh-server
-- make
-- prerequisites of Gnome shell extensionos
+Refer to functions `install_pkgs` in [setup.sh](setup.sh)
 
 #### Copy
 - theme (Cursor)
