@@ -73,7 +73,8 @@ function install_pkgs() {
         htop \
         simplescreenrecorder \
         openssh-server \
-        make
+        make \
+        tree
     install_docker
     echo ">>> Done"
     echo ""
