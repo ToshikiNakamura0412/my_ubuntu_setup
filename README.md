@@ -17,6 +17,9 @@ sudo reboot
 - mozc-utils-gui
 - curl
 - zsh
+- htop
+- simplescreenrecorder
+- docker
 - prerequisites of Gnome shell extensionos
 
 #### Copy
