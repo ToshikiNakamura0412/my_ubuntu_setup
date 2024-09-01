@@ -6,6 +6,12 @@
 ## Environment
 Ubuntu
 
+## Advance preparation
+**Change the language of the home directory to English**
+```bash
+LANG=C xdg-user-dirs-gtk-update
+```
+
 ## Installation
 ```bash
 git clone --depth=1 https://github.com/ToshikiNakamura0412/my_ubuntu_setup.git ~/my_ubuntu_setup
