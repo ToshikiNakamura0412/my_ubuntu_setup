@@ -11,6 +11,10 @@ Ubuntu
 ```bash
 LANG=C xdg-user-dirs-gtk-update
 ```
+Install git
+```bash
+sudo apt update && sudo apt install -y --no-install-recommends git
+```
 
 ## Installation
 ```bash
