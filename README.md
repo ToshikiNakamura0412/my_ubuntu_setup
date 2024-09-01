@@ -30,6 +30,7 @@ sudo reboot
 - htop
 - simplescreenrecorder
 - docker
+- openssh-server
 - prerequisites of Gnome shell extensionos
 
 #### Copy
