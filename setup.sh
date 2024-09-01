@@ -72,7 +72,8 @@ function install_pkgs() {
         zsh \
         htop \
         simplescreenrecorder \
-        openssh-server
+        openssh-server \
+        make
     install_docker
     echo ">>> Done"
     echo ""
