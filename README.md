@@ -51,11 +51,24 @@ Enable the following extensions
 - ArcMenu (by andrew.zaech)
 - WinTile: Windows 10 window tiling for GNOME
 
-Launch Tweaks and set
-- Appearance (Cursor)
-
 Set Dash-to-Panel and ArcMenu
+
+### Tweaks
+- Appearance (Cursor)
+- Set 'Caps Lock' to 'Ctrl' (Caps Lock behavior)
+
+### Terminal
+- Set color theme ([image](images/terminal_color_theme.png))
+
+### Mozc
+- Set up like macOS ([link](https://magidropack.hatenablog.com/entry/2018/11/30/120602))
+  - Press the 'Input Key' button at the top to sort
 
 ### Others
 - [dotfiles](https://github.com/ToshikiNakamura0412/dotfiles.git)
 - [dockerfiles](https://github.com/ToshikiNakamura0412/dockerfiles.git)
+- deb packages (e.g. [Google Chrome](https://www.google.com/chrome/?platform=linux), [Slack](https://slack.com/intl/ja-jp/downloads/linux), [Zoom](https://zoom.us/download?os=linux), [VSCode](https://code.visualstudio.com/download), [TeamViewer (full client)](https://www.teamviewer.com/ja/download/linux/))
+- GitHub
+  - user name, email
+  - SSH key
+- Nvidia driver ([link](https://qiita.com/tf63/items/0c6da72fe749319423b4))
