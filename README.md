@@ -50,6 +50,7 @@ Enable the following extensions
 - Dash to Panel
 - ArcMenu (by andrew.zaech)
 - WinTile: Windows 10 window tiling for GNOME
+- CHC-E (Custom Hot Corners - Extended)
 
 Set Dash-to-Panel and ArcMenu
 
