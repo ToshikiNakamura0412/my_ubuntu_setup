@@ -51,6 +51,7 @@ Enable the following extensions
 - ArcMenu (by andrew.zaech)
 - WinTile: Windows 10 window tiling for GNOME
 - CHC-E (Custom Hot Corners - Extended)
+- Sound Input & Output Device Chooser
 
 Set Dash-to-Panel and ArcMenu
 
