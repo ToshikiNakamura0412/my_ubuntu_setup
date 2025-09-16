@@ -57,6 +57,9 @@ function install_docker() {
     # Add user to docker group
     sudo gpasswd -a $USER docker
     sudo chmod 666 /var/run/docker.sock
+
+    # Enable docker BuildKit
+    echo '{ "features": { "buildkit": true } }' | sudo tee -a /etc/docker/daemon.json >/dev/null
 }
 
 function install_pkgs() {
